@@ -139,12 +139,13 @@ public function displyRecord(){
     }
     return $data;
   }
+  
 }
 
 
 public function delete(){
 
-  if(isset($_POST['delete-product-btn'])){
+  if(isset($_POST['delete-product-btn']) && isset($_POST['delete-checkbox'])){
     $dele=count($_POST['delete-checkbox']);
     $i=0;
     while($i<$dele){
@@ -155,6 +156,7 @@ public function delete(){
       if($result=$this->connect()->query($query)){
         header('Location:productList.php');
       }
+      
       $i++;
     }
 

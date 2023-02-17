@@ -57,6 +57,8 @@ a{
 <div class="container">
   <div class="row">
 <?php 
+if (is_array($data) || is_object($data))
+{
 foreach($data as $value){
   $dvd = new dvd;
   $furniture = new furniture;
@@ -78,6 +80,9 @@ foreach($data as $value){
   </div>
 </div>
 <?php
+}
+}else{
+  echo '<div class="alert bg-danger text-white w-75 ms-5">There are no products </div>';
 }
 ?>
 </div>
